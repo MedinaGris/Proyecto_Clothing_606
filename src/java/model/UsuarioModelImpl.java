@@ -3,8 +3,8 @@ package model;
 /*  
 PROYECTO ACTUAL VALIDADO
 Author: Griselda Medina Avendaño
-    Creado : 8 mar 2022
-    Actualización: 
+    Creado : 15 mar 2022
+    Actualización: 16 marzo 2022
     Descripción:
 */
 import bd.Conexion;
