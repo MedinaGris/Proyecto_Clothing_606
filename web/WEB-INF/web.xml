@@ -1,12 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>ListaUsuariosServlet</servlet-name>
-        <servlet-class>controler.ListaUsuariosServlet</servlet-class>
+        <servlet-name>EditarUsuarioServlet</servlet-name>
+        <servlet-class>controller.EditarUsuarioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GuardarEditarUsuarioServlet</servlet-name>
+        <servlet-class>controller.GuardarEditarUsuarioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EliminarUsuarioServlet</servlet-name>
+        <servlet-class>controller.EliminarUsuarioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListarUsuarioSevlet</servlet-name>
+        <servlet-class>controller.ListarUsuarioSevlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EliminarUsuarioServle</servlet-name>
+        <servlet-class>controller.EliminarUsuarioServle</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditarUsuarioServle</servlet-name>
+        <servlet-class>controller.EditarUsuarioServle</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GuardarUsuarioServlet</servlet-name>
+        <servlet-class>controller.GuardarUsuarioServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ListaUsuariosServlet</servlet-name>
-        <url-pattern>/ListaUsuariosServlet</url-pattern>
+        <servlet-name>EditarUsuarioServlet</servlet-name>
+        <url-pattern>/EditarUsuarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GuardarEditarUsuarioServlet</servlet-name>
+        <url-pattern>/GuardarEditarUsuarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EliminarUsuarioServlet</servlet-name>
+        <url-pattern>/EliminarUsuarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarUsuarioSevlet</servlet-name>
+        <url-pattern>/ListarUsuarioSevlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EliminarUsuarioServle</servlet-name>
+        <url-pattern>/EliminarUsuarioServle</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarUsuarioServle</servlet-name>
+        <url-pattern>/EditarUsuarioServle</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GuardarUsuarioServlet</servlet-name>
+        <url-pattern>/GuardarUsuarioServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -1,0 +1,60 @@
+
+
+.formulario{
+    background-color: #757575;
+    width: min(50 rem, 100%);/*utilizar el valor mas pequeño*/
+    margin: 0 auto ; 
+    padding: 2rem;
+    border-radius: 1rem; /*esquinas redondedas*/
+
+}
+
+
+.formulario fieldset{
+    border: none;
+}
+ 
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8 rem;
+    text-transform:uppercase ;
+    font-weight: 700; /*PARA QUE ESTE EN NEGRITAS*/
+    margin-bottom: 2rem;
+    color: #FFC107;
+}
+
+
+.campo{
+    margin-bottom: 1rem;
+}
+
+
+.campo label{
+    color : white;
+    font-weight: bold;
+    margin-bottom: .5rem;
+
+
+}
+
+.campo input [type="submit"]{
+    background-color: #097A7A;
+    color: white;
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+    
+}
+
+.input-text{
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 1.5rem;/*esquinas redondeadas*/ 
+}

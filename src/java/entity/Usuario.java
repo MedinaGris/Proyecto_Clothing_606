@@ -15,7 +15,6 @@ public class Usuario extends Persona{
     private int codigo;
     private String nombreUsuario;
     private String contraseña;
-    private static Usuario usuario;
 
     public Usuario() {
     }
@@ -26,6 +25,23 @@ public class Usuario extends Persona{
         this.contraseña = contraseña;
     }
 
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+   
     public int getcodigo() {
         return codigo;
     }
@@ -50,14 +66,16 @@ public class Usuario extends Persona{
         this.contraseña = contraseña;
     }
     
-      public static void main(String[] args) throws SQLException {
-        Usuario u1=new Usuario();
-        u1.setcodigo(3);
-        u1.setNombreUsuario("griselda");
-        u1.setContraseña("medina");
-  
-        
-    }
+//      public static void main(String[] args) throws SQLException {
+//        Usuario u1=new Usuario();
+//        u1.setcodigo(3);
+//        u1.setNombreUsuario("griselda");
+//        u1.setContraseña("medina");
+//        
+//        
+//  
+//        
+//    }
     
     
 }

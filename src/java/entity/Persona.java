@@ -8,8 +8,8 @@ package entity;
 public abstract class Persona {
 
     String usuario;
-    private String sexo;
-    private int edad;
+    String sexo;
+    int edad;
 
     public Persona() {
     }

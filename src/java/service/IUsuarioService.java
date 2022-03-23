@@ -18,7 +18,6 @@ public interface IUsuarioService {
     public void actualizarRegistro(Usuario usuario);
     public List<Usuario>obtenerRegistros();
     public Usuario obtenerRegistro(int idUsuario);
-
     public void eliminarRegistro(int idUsuario);
 
 

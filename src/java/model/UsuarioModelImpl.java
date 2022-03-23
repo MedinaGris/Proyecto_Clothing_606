@@ -31,10 +31,13 @@ public class UsuarioModelImpl implements IUsuarioModel {
             conexion = new Conexion();
             conexion.conectar();
             connection = conexion.getConnection();
-            String sql = "INSERT INTO usuario (nombreUsuario,contraseña) VALUES (?,?)";
+            String sql = "INSERT INTO usuario (nombreUsuario,contraseña, sexo, edad) VALUES (?,?,?,?)";
             try(PreparedStatement statement = connection.prepareStatement(sql)){
                 statement.setString(1,usuario.getNombreUsuario());
                 statement.setString(2,usuario.getContraseña());
+                statement.setString(3,usuario.getSexo());
+                statement.setInt(4,usuario.getEdad());
+                
                 statement.executeUpdate();
                 System.out.println("insercion exitosa");
             }
@@ -53,12 +56,15 @@ public class UsuarioModelImpl implements IUsuarioModel {
             conexion.conectar();
             connection = conexion.getConnection();
 
-            String sql = "update usuario set nombreUsuario=?, contraseña = ? where idUsuario=?";
+            String sql = "update usuario set nombreUsuario=?, contraseña =?, sexo= ?, edad= ? where idUsuario=?";
             try ( PreparedStatement statement = connection.prepareStatement(sql)) {
                 
                 statement.setString(1, usuario.getNombreUsuario());
                 statement.setString(2, usuario.getContraseña());
-                statement.setInt(3, usuario.getcodigo());
+                statement.setString(3, usuario.getSexo());
+                statement.setInt(4, usuario.getEdad());
+                statement.setInt(5, usuario.getcodigo());
+                
                 statement.executeUpdate();
                 System.out.println("datos actualizados correctamente...");
 
@@ -87,6 +93,9 @@ public class UsuarioModelImpl implements IUsuarioModel {
                     Usuario usuario = new Usuario();
                     usuario.setcodigo(resultSet.getInt(1));
                     usuario.setNombreUsuario(resultSet.getString(2));
+                    usuario.setContraseña(resultSet.getString(3));
+                    usuario.setSexo(resultSet.getString(4));
+                    usuario.setEdad(resultSet.getInt(5));
                     
                     listaUsuario.add(usuario);
                 }
@@ -95,7 +104,7 @@ public class UsuarioModelImpl implements IUsuarioModel {
             conexion.desconectar();
   
         }catch(SQLException e){
-            System.out.println("error al eliminar el registro: "+e.getMessage());
+            System.out.println("error : "+e.getMessage());
             
         }
         return listaUsuario;
@@ -112,7 +121,7 @@ public class UsuarioModelImpl implements IUsuarioModel {
             conexion.conectar();
             
             connection = conexion.getConnection();
-            String sql = "SELECT *FROM usuario WHERE codigo = ?";
+            String sql = "SELECT *FROM usuario WHERE idUsuario = ?";
             try ( PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setInt(1, codigo);
                 resultSet = statement.executeQuery();
@@ -121,12 +130,15 @@ public class UsuarioModelImpl implements IUsuarioModel {
                     
                     usuario.setcodigo(resultSet.getInt(1));
                     usuario.setNombreUsuario(resultSet.getString(2));  
+                    usuario.setContraseña(resultSet.getString(3));
+                    usuario.setSexo(resultSet.getString(4));
+                    usuario.setEdad(resultSet.getInt(5));
                 }  
             }
             conexion.desconectar();
   
         }catch(SQLException e){
-            System.out.println("error al eliminar el registro: "+e.getMessage());   
+            System.out.println("No se encontro el registro: "+e.getMessage());   
         }
          return usuario;    
     }
@@ -156,20 +168,28 @@ public class UsuarioModelImpl implements IUsuarioModel {
        }
     
         
-     public static void main(String[] args) {
-        Usuario u = new Usuario();
-        UsuarioModelImpl us= new UsuarioModelImpl();
-        
-        
-        u.setContraseña("999");
-        u.setNombreUsuario("Martha");
-        u.setcodigo(9);  
-        
-        us.actualizarRegistro(u);
-        us.eliminarRegistro(5);
-  
-        
-        
-        }
-    
+//     public static void main(String[] args) {
+//        Usuario u = new Usuario();
+//        UsuarioModelImpl us= new UsuarioModelImpl();
+//        
+//        
+////
+////        us.actualizarRegistro(u);
+////        us.eliminarRegistro(3);
+//        
+//        
+////                Obtener registros
+//        for (int i = 0; i < us.obtenerRegistros().size(); i++) {
+//            System.out.println(us.obtenerRegistros().get(i).getcodigo());
+//            System.out.println(us.obtenerRegistros().get(i).getNombreUsuario());
+//            System.out.println(us.obtenerRegistros().get(i).getContraseña());  
+//        }
+//  
+//        
+//        
+//        }
+//    
+     
+     
+     
 }
