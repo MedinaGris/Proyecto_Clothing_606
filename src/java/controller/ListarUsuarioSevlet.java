@@ -47,21 +47,11 @@ public class ListarUsuarioSevlet extends HttpServlet {
                         out.println("<th>Nombre de usuario</th>");
 
                         out.println("<th>Contraseña</th>");
-                        
-                        
                         out.println("<th>Sexo</th>");
-                        
-                                
-                        
                         out.println("<th>Edad</th>");
-                        
-                        
-                        
                         out.println("<th>Editar</th>");
-                         
                         out.println("<th>Eliminar</th>");
-
-                    out.println("</tr>");
+                        out.println("</tr>");
 
                     IUsuarioService service = new UsuarioServiceImpl();
 
